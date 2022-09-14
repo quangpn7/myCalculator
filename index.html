@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+      integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="mt-5"></div>
+    <div class="container-fluid w-50 cal pt-5 pb-4 cal__body">
+      <span
+        class="font-italic badge-pill badge-warning mb-3 d-inline-block font-weight display-4 py-3 px-5 "
+        >Simple Calculator <i class="fas fa-calculator"></i
+      ></span>
+      <div
+        class="cal__upper container pt-3 pb-1 cal__monitor d-flex justify-content-between align-items-center"
+      >
+        <div
+          id="left_monitor"
+          class="result mt-3 text-left font-italic pb-0 text-truncate"
+        ></div>
+        <div
+          id="right_monitor"
+          class="result mt-3 text-right pb-0 display-4 text-truncate"
+        ></div>
+      </div>
+      <div class="cal__bottom">
+        <div class="cal__left">
+          <div class="container cal__button">
+            <div
+              id="delFnc"
+              class="row cal__button row cal__btnRow justify-content-between"
+            >
+              <button
+                id="clearBtn"
+                type="button"
+                class="btn col-8"
+                onclick="clea()"
+              >
+                Clear
+              </button>
+              <button
+                id="removeBtn"
+                type="button"
+                class="btn col-3"
+                value="remove"
+                onclick="removeDisplay()"
+              >
+                R
+              </button>
+            </div>
+            <div class="row cal__btnRow">
+              <button
+                type="button"
+                class="btn col p-4"
+                value="1"
+                onclick="inputDisplay(value)"
+              >
+                1
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="2"
+                onclick="inputDisplay(value)"
+              >
+                2
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="3"
+                onclick="inputDisplay(value)"
+              >
+                3
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="+"
+                onclick="inputDisplay(value)"
+              >
+                +
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="-"
+                onclick="inputDisplay(value)"
+              >
+                -
+              </button>
+            </div>
+            <div class="row cal__btnRow">
+              <button
+                type="button"
+                class="btn col p-4"
+                value="4"
+                onclick="inputDisplay(value)"
+              >
+                4
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="5"
+                onclick="inputDisplay(value)"
+              >
+                5
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="6"
+                onclick="inputDisplay(value)"
+              >
+                6
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="*"
+                onclick="inputDisplay(value)"
+              >
+                X
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="/"
+                onclick="inputDisplay(value)"
+              >
+                /
+              </button>
+            </div>
+            <div class="row cal__btnRow">
+              <button
+                type="button"
+                class="btn col p-4"
+                value="7"
+                onclick="inputDisplay(value)"
+              >
+                7
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="8"
+                onclick="inputDisplay(value)"
+              >
+                8
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="9"
+                onclick="inputDisplay(value)"
+              >
+                9
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="0"
+                onclick="inputDisplay(value)"
+              >
+                0
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value=" "
+                onclick="inputDisplay(value)"
+                id="spaceBtn"
+              >
+              &#5015
+              </button>
+            </div>
+            <div class="row cal__btnRow">
+              <button
+                type="button"
+                class="btn col-2 p-4"
+                value="("
+                onclick="inputDisplay(value)"
+              >
+                (
+              </button>
+              <button
+                type="button"
+                class="btn col-2 p-4"
+                value=")"
+                onclick="inputDisplay(value)"
+              >
+                )
+              </button>
+              <button
+                type="button"
+                class="btn col-2 p-4 display-4"
+                value="."
+                onclick="inputDisplay(value)"
+              >
+                <i class="fas fa-dot-circle w-50"></i>
+              </button>
+              <button
+                type="button"
+                class="btn col p-4"
+                value="="
+                onclick="calc()"
+              >
+                =
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="cal__right w-25"></div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
+      integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

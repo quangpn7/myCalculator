@@ -1,0 +1,50 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(../font/Calculator.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: myFirstFont;
+  font-weight: bold;
+}
+
+.cal__monitor {
+  height: 6.4375rem;
+}
+.cal__btnRow {
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+.cal__button .cal__btnRow button {
+  background-color: #bfd4df;
+  font-size: 36px;
+}
+.cal__button .cal__btnRow button:hover {
+  background-color: #61747e;
+}
+.cal__body {
+  border-radius: 20px;
+  background-color: #90a4ae;
+}
+.cal__monitor {
+  background-color: #e4e1e1;
+}
+
+#delFnc {
+  gap: 0;
+}
+
+#left_monitor {
+  width: 20%;
+  font-size: 28px;
+}
+#right_monitor {
+  width: 80%;
+}
+
+#spaceBtn {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
